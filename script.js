@@ -14,15 +14,15 @@ function createKleckse() {
         const randomIndex = Math.floor(Math.random() * klecksBilder.length);
         const randomBild = klecksBilder[randomIndex];
 
-        const klecksGroesse = 120;
+        const klecksSize = randomSize();
 
         const klecks = document.createElement("div");
         klecks.classList.add("klecks");
         klecks.style.backgroundImage = `url("${randomBild}")`;
-        klecks.style.width = "100px";
-        klecks.style.height = "100px";
+        klecks.style.width = klecksSize + "px";
+        klecks.style.height = klecksSize + "px";
         klecks.style.position = "absolute";
-        const position = getValidPosition(klecksGroesse);
+        const position = getValidPosition(klecksSize);
         klecks.style.left = position.x + "px";
         klecks.style.top = position.y + "px";
         klecks.style.backgroundSize = "contain";
@@ -34,6 +34,8 @@ function createKleckse() {
     gameContainer.appendChild(klecks);
     }
 }
+
+
 
 function getValidPosition(klecksGroesse) {      //random x,y coordinates
     const containerWidth = gameContainer.clientWidth;
@@ -61,6 +63,13 @@ function getValidPosition(klecksGroesse) {      //random x,y coordinates
         }
     }
     return {x: randomX, y: randomY};
+}
+
+function randomSize () {
+    const min = 75;
+    const max = 125;
+    const size = Math.random() * (max - min) + min;
+    return size;
 }
 
 
