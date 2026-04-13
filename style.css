@@ -76,7 +76,7 @@ main {
     z-index: 2;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
-    outline: none;
+    outline: 1px solid red;
 }
 
 .klecks:hover {
