@@ -131,5 +131,5 @@ document.addEventListener(
 );
 
 
-createKleckse(110);
+createKleckse(160);
 
