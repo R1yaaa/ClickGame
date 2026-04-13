@@ -11,7 +11,7 @@ const klecksBilder = [
     "images/klecks10.png"
 ]
 const klecksPositionen = [];
-const minDistance = 10;
+const minDistance = 20;
 // const maxRespawns = 0;
 let clickCount = 0;
 
