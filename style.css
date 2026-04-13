@@ -93,3 +93,20 @@ main {
 .klecks:active {
     outline: none;
 }
+
+.hidden-message {
+    position: absolute;
+
+    top: 100px;
+    right: 180px;
+
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    max-width: 300px;
+    text-align: right;
+}
