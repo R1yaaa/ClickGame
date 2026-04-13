@@ -11,7 +11,7 @@ const klecksBilder = [
     "images/klecks10.png"
 ]
 const klecksPositionen = [];
-const minDistance = 8;
+const minDistance = 10;
 // const maxRespawns = 0;
 let clickCount = 0;
 
@@ -110,8 +110,8 @@ function randomSize () {
     let max;
 
     if (screenWidth>=768) {
-        min = 160;
-        max = 240;
+        min = 180;
+        max = 260;
     }
     else {
         min = 100;
