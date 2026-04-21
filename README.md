@@ -11,7 +11,7 @@ Small interactive game where users have to click on colored blobs to reveal the 
 
 - Clicking on a blob makes it disappear or reappear in a new position.
 
-- The goal is to remove all the blobs.
+- The goal is to remove all the blobs and reveal the hidden background.
 
 ---
 
@@ -21,7 +21,8 @@ Small interactive game where users have to click on colored blobs to reveal the 
 * Dynamic blob scaling based on screen size
 * Randomized blob placement and sizing
 * Mouse and touch input support
-* Hidden message reveal mechanic
+* Animated popup character with taunt messages
+* No external dependencies
 
 ---
 
@@ -41,10 +42,23 @@ Clone the repository:
 git clone https://github.com/stjume/FarbklecksSpiel.git
 ```
 
-For development, using a local web server such as **Live Server** is recommended.
+Open `index.html` directly in a browser
+or run a simple local web server for development.
+
+Using **VS Code Live Server** is recommended.
 
 ---
 
 ## Deployment
 
-The project can be deployed via **GitHub Pages**.
+No backend, database, or complex runtime environment required.
+
+Simply host the static project files on any basic web server and the game is ready to use.
+
+Example hosting options:
+
+* GitHub Pages
+* Apache
+* Nginx
+* Local web server
+* Any static hosting provider

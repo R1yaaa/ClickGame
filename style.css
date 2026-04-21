@@ -13,7 +13,7 @@ body {
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: #870903;
+    background-color: #ffc900;
     padding: 0 20px;
     box-sizing: border-box;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.503);
@@ -22,7 +22,9 @@ body {
 #game-title {
     margin: 0;
     font-size: 23px;
-    color: #F9DD9C;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+
 }
 
 #restart-btn {
@@ -98,7 +100,7 @@ main {
     position: absolute;
 
     top: 100px;
-    right: 180px;
+    right: 200px;
 
     font-size: 28px;
     font-weight: bold;
@@ -107,6 +109,70 @@ main {
     pointer-events: none;
     user-select: none;
     -webkit-user-select: none;
-    max-width: 300px;
-    text-align: right;
+    max-width: 500px;
+    text-align: left;
+}
+
+.hidden-message strong {
+    font-weight: 900;
+}
+
+
+#taunt-popup {
+    position: absolute;
+    top: 120px;
+    z-index: 1000;
+    pointer-events: none;
+
+    display: none;             
+    align-items: center;        
+    justify-content: center;
+    gap: 25px;
+
+    animation: tauntFloat 0.8s ease-in-out infinite alternate;
+}
+
+#taunt-popup.show {
+    display: flex;            
+}
+
+#taunt-popup img {
+    width: 150px;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+#taunt-popup .taunt-text {
+    margin: 0;
+    padding: 0;
+    font-size: 56px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    line-height: 1;
+    white-space: nowrap;
+    text-shadow: 2px 2px 6px rgba(207, 207, 207, 0.708);
+}
+
+#taunt-popup.left {
+    left: 30px;
+    flex-direction: row;          
+}
+
+#taunt-popup.right {
+    right: 30px;
+    flex-direction: row-reverse;  
+}
+
+#taunt-popup.right img {
+    transform: scaleX(-1);
+}
+
+@keyframes tauntFloat {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-8px);
+    }
 }

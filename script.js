@@ -140,7 +140,7 @@ function randomSize () {
     return size;
 }
 
-document.addEventListener(
+document.addEventListener( //prevent zooming
   "dblclick",
   function (event) {
     event.preventDefault();
@@ -167,5 +167,28 @@ function getInitialKlecksCount() {
     }
 }
 
+const tauntPopup = document.getElementById("taunt-popup");
+
+function showTauntPopup() {
+    tauntPopup.classList.remove("left", "right");
+    const side = Math.random() < 0.5 ? "left" : "right";        //randomly choose left or right
+    tauntPopup.classList.add(side, "show");
+
+    setTimeout(() => {
+        tauntPopup.classList.remove("show");                    //hide after 2.5s
+    }, 2500);                       
+}
+
+function startTauntLoop() {
+    const delay = Math.random() * 10000 + 10000; //between 10s and 20s
+
+    setTimeout(() => {
+        showTauntPopup();
+        startTauntLoop();
+    }, delay);
+}
+
 createKleckse(getInitialKlecksCount());
+
+startTauntLoop();
 
