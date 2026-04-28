@@ -60,7 +60,6 @@ main {
     background-color: #fff;
     background-size: contain;
     touch-action: manipulation;
-
 }
 
 #message-image {
@@ -111,6 +110,7 @@ main {
     -webkit-user-select: none;
     max-width: 500px;
     text-align: left;
+    display: none;
 }
 
 .hidden-message strong {

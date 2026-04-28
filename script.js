@@ -264,6 +264,7 @@ function messageStillCovered() {
     const kleckse = document.querySelectorAll(".klecks");
 
     if (!message) return false;
+    if (!messageVisible) return true;
 
     const rect = message.getBoundingClientRect();
 
@@ -305,9 +306,12 @@ function showFinalPopup() {
     tauntText.textContent = "Menno!";
 }
 
-
-
-
+let messageVisible = false
+setTimeout(() => {      //text appears delayed
+    const message = document.querySelector(".hidden-message");
+    message.style.display = "block";
+    messageVisible = true;
+}, 1500);
 
 
 
