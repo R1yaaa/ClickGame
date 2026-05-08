@@ -22,10 +22,35 @@ Small interactive game where users have to click on colored blobs to reveal the 
 * Tablet-first responsive design
 * Dynamic blob scaling based on screen size
 * Randomized blob placement and sizing
+* customizable hidden message, positions and blob counts via query parameters
+* Base64 encoded messages
 * Mouse and touch input support
 * Event-based character popups ("Ätsch!" / "Menno!")
 * Randomized sound effects for character taunts
 * No external dependencies
+
+---
+
+## Custom URL Parameters
+
+The game supports optional query parameters to customize some contents
+
+### Parameters
+
+| Parameter | Description |
+|---|---|
+| `t` | Hidden message text |
+| `x` | Horizontal text position (0-100) |
+| `y` | Vertical text position (0-100) |
+| `b` | Initial blob count |
+
+### Examples
+
+Basic custom message:
+
+```text
+?t=Hallo1&b=20
+```
 
 ---
 

@@ -28,15 +28,27 @@ gameContainer.addEventListener('touchstart', (e) => {
     }
 }, { passive: false });
 
+
+
+// Query Parameters
 const hiddenMessage = document.querySelector(".hidden-message");
 
 if (urlSettings.text && hiddenMessage) {
   hiddenMessage.textContent = urlSettings.text;
 }
 
-// Query Parameters
+if (hiddenMessage) {
+  if (urlSettings.x !== null) {
+    hiddenMessage.style.left = `${Math.min(Math.max(Number(urlSettings.x), 0), 100)}%`;
+  }
+
+  if (urlSettings.y !== null) {
+    hiddenMessage.style.top = `${Math.min(Math.max(Number(urlSettings.y), 0), 100)}%`;
+  }
+}
+
 function removeCharacters(input) {
-    return input.replace(/[^a-zA-Z0-9]/g, "");
+    return input.replace(/[^a-zA-Z0-9 ]/g, "");
 }
 
 function encodeTextToBase64(text) {
@@ -363,11 +375,11 @@ setTimeout(() => {      //text appears delayed
 
 
 
-const blobCount = urlSettings.b
-  ? Math.min(Math.max(Number(urlSettings.b), 1), 500)
+const klecksCount = urlSettings.b
+  ? Math.min(Math.max(Number(urlSettings.b), 1), 800)
   : getInitialKlecksCount();
 
-createKleckse(blobCount);
+createKleckse(klecksCount);
 gameStarted = true;
 
 
