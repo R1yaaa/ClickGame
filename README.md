@@ -1,5 +1,5 @@
 # Farbklecks Spiel
-Small interactive game where users have to click on colored blobs to reveal the background. Includes playful character interactions and sound effects
+Small interactive game where users have to click on colored blobs to reveal the background. Includes playful character interactions and sound effects.
 [Click here to try out](https://stjume.github.io/FarbklecksSpiel/)
 
 ![Game](assets/images/game.png)
@@ -7,7 +7,7 @@ Small interactive game where users have to click on colored blobs to reveal the 
 ---
 
 # Usage
-- Open der url of the game with your tablet.
+- Open the url of the game with your tablet.
 
 - There are several colored blobs in the beginning.
 

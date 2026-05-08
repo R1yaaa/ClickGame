@@ -1,4 +1,5 @@
 const gameContainer = document.getElementById('game-container');
+const urlSettings = getQueryParams();
 const klecksBilder = [
     "assets/images/klecks2.png",
     "assets/images/klecks6.PNG",
@@ -18,7 +19,7 @@ const klecksPositionen = [];
 const minDistance = 25;
 // const maxRespawns = 0;
 let clickCount = 0;
-spawnedKlecksCount = 0;
+let spawnedKlecksCount = 0;
 let gameStarted = false;
 
 gameContainer.addEventListener('touchstart', (e) => {
@@ -26,6 +27,52 @@ gameContainer.addEventListener('touchstart', (e) => {
         e.preventDefault();
     }
 }, { passive: false });
+
+const hiddenMessage = document.querySelector(".hidden-message");
+
+if (urlSettings.text && hiddenMessage) {
+  hiddenMessage.textContent = urlSettings.text;
+}
+
+// Query Parameters
+function removeCharacters(input) {
+    return input.replace(/[^a-zA-Z0-9]/g, "");
+}
+
+function encodeTextToBase64(text) {
+    return btoa(unescape(encodeURIComponent(text)));
+}
+
+function decodeBase64ToText(encodedText) {
+    return decodeURIComponent(escape(atob(encodedText)));
+}
+
+function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+
+    let text = params.get("t");
+
+    if (text) {
+        try {
+        text = decodeBase64ToText(text);
+        } catch {
+        const encoded = encodeTextToBase64(text);
+        params.set("t", encoded);
+        window.history.replaceState({}, "", "?" + params.toString());
+        }
+    }
+
+    return {
+        text: text ? removeCharacters(text) : null,
+        x: params.get("x"),
+        y: params.get("y"),
+        b: params.get("b")
+    };
+}
+
+
+
+
 
 
 
@@ -316,7 +363,11 @@ setTimeout(() => {      //text appears delayed
 
 
 
-createKleckse(getInitialKlecksCount());
+const blobCount = urlSettings.b
+  ? Math.min(Math.max(Number(urlSettings.b), 1), 500)
+  : getInitialKlecksCount();
+
+createKleckse(blobCount);
 gameStarted = true;
 
 
